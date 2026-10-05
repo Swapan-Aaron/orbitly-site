@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Orbitly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <section class="contact-section" style="min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+        <div class="container">
+            <div style="max-width: 450px; margin: 0 auto;">
+                <div style="text-align: center; margin-bottom: var(--spacing-xl);">
+                    <a href="/" class="logo" style="display: inline-flex; align-items: center; gap: 0.625rem; font-size: 1.5rem;">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="16" cy="8" r="2" fill="currentColor"/>
+                            <circle cx="23" cy="16" r="2" fill="currentColor"/>
+                            <circle cx="16" cy="24" r="2" fill="currentColor"/>
+                            <circle cx="9" cy="16" r="2" fill="currentColor"/>
+                        </svg>
+                        <span>Orbitly</span>
+                    </a>
+                    <h1 style="margin-top: var(--spacing-lg); font-size: 2rem;">Admin Login</h1>
+                    <p style="color: var(--text-secondary); margin-top: var(--spacing-sm);">Access the admin dashboard</p>
+                </div>
+
+                <div class="contact-form-container">
+                    <form id="admin-login-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" id="username" name="username" class="form-input" required autocomplete="username">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" id="password" name="password" class="form-input" required autocomplete="current-password">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Log In</button>
+
+                        <p style="text-align: center; margin-top: var(--spacing-md); font-size: 0.875rem; color: var(--text-muted);">
+                            <a href="/" style="color: var(--color-violet); font-weight: 500;">← Back to website</a>
+                        </p>
+                    </form>
+                </div>
+
+                <div style="text-align: center; margin-top: var(--spacing-lg); padding: var(--spacing-md); background: var(--bg-secondary); border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+                    <p style="font-size: 0.875rem; color: var(--text-muted);">
+                        Default credentials:<br>
+                        <strong>admin</strong> / <strong>admin123</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="/js/main.js"></script>
+    <script>
+        const form = document.getElementById('admin-login-form');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Clear previous errors
+            document.querySelectorAll('.error-message').forEach(el => el.remove());
+
+            try {
+                const response = await fetch('/admin/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    window.location.href = '/admin/dashboard';
+                } else {
+                    const errorDiv = document.createElement('div');
+                    errorDiv.className = 'error-message';
+                    errorDiv.textContent = data.message || 'Invalid credentials';
+                    errorDiv.style.color = '#EF4444';
+                    errorDiv.style.marginBottom = 'var(--spacing-md)';
+                    errorDiv.style.padding = 'var(--spacing-sm)';
+                    errorDiv.style.background = 'rgba(239, 68, 68, 0.1)';
+                    errorDiv.style.borderRadius = 'var(--radius-md)';
+                    form.insertAdjacentElement('beforebegin', errorDiv);
+                }
+            } catch (error) {
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'error-message';
+                errorDiv.textContent = 'Connection error. Please try again.';
+                errorDiv.style.color = '#EF4444';
+                errorDiv.style.marginBottom = 'var(--spacing-md)';
+                errorDiv.style.padding = 'var(--spacing-sm)';
+                errorDiv.style.background = 'rgba(239, 68, 68, 0.1)';
+                errorDiv.style.borderRadius = 'var(--radius-md)';
+                form.insertAdjacentElement('beforebegin', errorDiv);
+            }
+        });
+    </script>
+</body>
+</html>

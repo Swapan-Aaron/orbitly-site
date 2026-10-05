@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Orbitly - Smart scheduling and workflow tools for freelancers and small teams. Plan your week, track projects, and get paid on time.">
+    <title>Orbitly - Your work, in orbit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="/" class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="16" cy="8" r="2" fill="currentColor"/>
+                        <circle cx="23" cy="16" r="2" fill="currentColor"/>
+                        <circle cx="16" cy="24" r="2" fill="currentColor"/>
+                        <circle cx="9" cy="16" r="2" fill="currentColor"/>
+                    </svg>
+                    <span>Orbitly</span>
+                </a>
+
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="nav-links">
+                    <a href="/features">Features</a>
+                    <a href="/pricing">Pricing</a>
+                    <a href="/about">About</a>
+                    <a href="/contact">Contact</a>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="4" fill="currentColor"/>
+                            <path d="M10 2V4M10 16V18M18 10H16M4 10H2M15.66 4.34L14.24 5.76M5.76 14.24L4.34 15.66M15.66 15.66L14.24 14.24M5.76 5.76L4.34 4.34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" fill="currentColor"/>
+                        </svg>
+                    </button>
+                    <a href="/auth" class="btn btn-secondary">Log In / Register</a>
+                    <a href="/trial" class="btn btn-primary">Start Free Trial</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Your work, in orbit.</h1>
+                    <p class="hero-subtitle">One simple app to plan your week, track your projects, and get paid on time.</p>
+                    <div class="hero-cta">
+                        <a href="/trial" class="btn btn-primary btn-lg">Start Free Trial</a>
+                        <a href="#demo" class="btn btn-outline btn-lg">Watch Demo</a>
+                    </div>
+                    <p class="hero-note">14-day free trial • No credit card required</p>
+                </div>
+                <div class="hero-image">
+                    <div class="app-mockup">
+                        <div class="mockup-window">
+                            <div class="mockup-header">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="mockup-content">
+                                <div class="mockup-sidebar">
+                                    <div class="mockup-item"></div>
+                                    <div class="mockup-item"></div>
+                                    <div class="mockup-item active"></div>
+                                    <div class="mockup-item"></div>
+                                </div>
+                                <div class="mockup-main">
+                                    <div class="mockup-card"></div>
+                                    <div class="mockup-card"></div>
+                                    <div class="mockup-card"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By Section -->
+    <section class="trusted-by">
+        <div class="container">
+            <p class="trusted-label">Trusted by 10,000+ freelancers and teams</p>
+            <div class="trusted-logos">
+                <div class="logo-item">StudioBlue</div>
+                <div class="logo-item">PixelCraft</div>
+                <div class="logo-item">CodeHive</div>
+                <div class="logo-item">DesignLab</div>
+                <div class="logo-item">Streamline</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Everything you need in one place</h2>
+                <p class="section-subtitle">Five powerful tools that work together seamlessly</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="4" y="8" width="24" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M4 12H28" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="10" cy="18" r="1.5" fill="currentColor"/>
+                            <circle cx="16" cy="18" r="1.5" fill="currentColor"/>
+                            <circle cx="22" cy="18" r="1.5" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Smart Planner</h3>
+                    <p class="feature-description">Automatically schedules tasks around meetings and suggests the best time for focused work.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="6" y="6" width="8" height="8" rx="1" stroke="currentColor" stroke-width="2"/>
+                            <rect x="18" y="6" width="8" height="8" rx="1" stroke="currentColor" stroke-width="2"/>
+                            <rect x="6" y="18" width="8" height="8" rx="1" stroke="currentColor" stroke-width="2"/>
+                            <rect x="18" y="18" width="8" height="8" rx="1" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Project Boards</h3>
+                    <p class="feature-description">Kanban-style boards with drag-and-drop cards, checklists, and file attachments.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="11" stroke="currentColor" stroke-width="2"/>
+                            <path d="M16 8V16L21 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Time Tracker</h3>
+                    <p class="feature-description">One-click timers that attach to tasks and clients with weekly summary reports.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="5" y="7" width="22" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M5 12H27" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="12" cy="17" r="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M17 17H24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M17 21H22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Client Portal</h3>
+                    <p class="feature-description">Shareable pages where clients view progress and leave feedback without an account.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="6" y="5" width="20" height="22" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M11 11H21M11 16H21M11 21H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Invoice Builder</h3>
+                    <p class="feature-description">Turn tracked hours into professional invoices with automatic payment reminders.</p>
+                </div>
+
+                <div class="feature-card feature-card-highlight">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path d="M16 4L19 13H28L21 19L24 28L16 22L8 28L11 19L4 13H13L16 4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">AI Assistant</h3>
+                    <p class="feature-description">Drafts task lists from meeting notes and writes client update emails. <span class="badge">$5/mo add-on</span></p>
+                </div>
+            </div>
+
+            <div class="features-cta">
+                <a href="features.html" class="btn btn-outline">Explore All Features</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Preview -->
+    <section class="pricing-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Simple, transparent pricing</h2>
+                <p class="section-subtitle">Start free, upgrade when you're ready</p>
+            </div>
+
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3 class="pricing-name">Starter</h3>
+                    <div class="pricing-price">
+                        <span class="price-amount">Free</span>
+                    </div>
+                    <p class="pricing-description">Perfect for trying it out</p>
+                    <ul class="pricing-features">
+                        <li>3 active projects</li>
+                        <li>Basic planner</li>
+                        <li>1 client portal</li>
+                        <li>5 invoices per month</li>
+                    </ul>
+                    <a href="auth.html" class="btn btn-outline btn-block">Get Started</a>
+                </div>
+
+                <div class="pricing-card pricing-card-popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3 class="pricing-name">Solo</h3>
+                    <div class="pricing-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">9</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    <p class="pricing-description">For freelancers</p>
+                    <ul class="pricing-features">
+                        <li>Unlimited projects</li>
+                        <li>Full Smart Planner</li>
+                        <li>Time tracking</li>
+                        <li>Unlimited invoices</li>
+                        <li>Custom branding</li>
+                    </ul>
+                    <a href="trial.html" class="btn btn-primary btn-block">Start Free Trial</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3 class="pricing-name">Team</h3>
+                    <div class="pricing-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">19</span>
+                        <span class="price-period">/user/month</span>
+                    </div>
+                    <p class="pricing-description">For small teams</p>
+                    <ul class="pricing-features">
+                        <li>Everything in Solo</li>
+                        <li>Shared workspaces</li>
+                        <li>Team reports</li>
+                        <li>Permissions</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <a href="trial.html" class="btn btn-outline btn-block">Start Free Trial</a>
+                </div>
+            </div>
+
+            <div class="pricing-cta">
+                <a href="pricing.html" class="text-link">View full pricing details →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What our users say</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"I used to spend Sunday nights planning my week. Now Orbitly does it in seconds."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JL</div>
+                        <div class="author-info">
+                            <div class="author-name">Jordan L.</div>
+                            <div class="author-title">Freelance Illustrator</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Our clients love the portal. It cut our email back-and-forth in half."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SK</div>
+                        <div class="author-info">
+                            <div class="author-name">Samira K.</div>
+                            <div class="author-title">Founder, 6-person design studio</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"The invoice reminders alone paid for the subscription in the first month."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">CM</div>
+                        <div class="author-info">
+                            <div class="author-name">Chris M.</div>
+                            <div class="author-title">Freelance Developer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="demo">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">See Orbitly in action</h2>
+                <p class="cta-subtitle">Watch a quick 2-minute demo of how Orbitly brings your workflow together</p>
+
+                <!-- YouTube Video Placeholder -->
+                <div style="max-width: 800px; margin: var(--spacing-xl) auto var(--spacing-xl);">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-xl); background: var(--bg-secondary); border: 2px solid var(--border-color);">
+                        <iframe
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                            src="https://www.youtube.com/embed/sxt4YCIsn2I"
+                            title="Orbitly Product Demo"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <h2 class="cta-title" style="margin-top: var(--spacing-3xl);">Ready to get your work in orbit?</h2>
+                <p class="cta-subtitle">Start your free 14-day trial. No credit card required.</p>
+                <div class="cta-buttons">
+                    <a href="trial.html" class="btn btn-primary btn-lg">Start Free Trial</a>
+                    <a href="contact.html" class="btn btn-outline-light btn-lg">Talk to Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="16" cy="8" r="2" fill="currentColor"/>
+                            <circle cx="23" cy="16" r="2" fill="currentColor"/>
+                            <circle cx="16" cy="24" r="2" fill="currentColor"/>
+                            <circle cx="9" cy="16" r="2" fill="currentColor"/>
+                        </svg>
+                        <span>Orbitly</span>
+                    </div>
+                    <p class="footer-tagline">Your work, in orbit.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/vancityreynolds/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <circle cx="18" cy="6" r="1" fill="currentColor"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="#">Integrations</a></li>
+                        <li><a href="#">Templates</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Video Tutorials</a></li>
+                        <li><a href="#">System Status</a></li>
+                        <li><a href="contact.html">Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:hello@orbitly.example">hello@orbitly.example</a></li>
+                        <li><a href="tel:5550193346">(555) 019-3346</a></li>
+                        <li>88 Innovation Drive, Floor 4<br>Austin, TX 78701</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Orbitly. All rights reserved. This is a fictional company for practice purposes.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

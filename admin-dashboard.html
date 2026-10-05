@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Orbitly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .admin-header {
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-color);
+            padding: var(--spacing-md) 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .admin-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .admin-tabs {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin: var(--spacing-xl) 0;
+            border-bottom: 2px solid var(--border-color);
+        }
+        .admin-tab {
+            padding: var(--spacing-sm) var(--spacing-lg);
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: all var(--transition-base);
+        }
+        .admin-tab.active {
+            color: var(--color-violet);
+            border-bottom-color: var(--color-violet);
+        }
+        .admin-content {
+            display: none;
+        }
+        .admin-content.active {
+            display: block;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+        .data-table th {
+            background: var(--bg-primary);
+            padding: var(--spacing-md);
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid var(--border-color);
+        }
+        .data-table td {
+            padding: var(--spacing-md);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+        .data-table tr:hover {
+            background: var(--bg-accent);
+        }
+        .delete-btn {
+            padding: 0.375rem 0.75rem;
+            background: #EF4444;
+            color: white;
+            border: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: all var(--transition-base);
+        }
+        .delete-btn:hover {
+            background: #DC2626;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+        .stat-card {
+            padding: var(--spacing-lg);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-violet);
+            margin-bottom: var(--spacing-xs);
+        }
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="admin-header">
+        <div class="container">
+            <nav class="admin-nav">
+                <a href="/" class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="16" cy="8" r="2" fill="currentColor"/>
+                        <circle cx="23" cy="16" r="2" fill="currentColor"/>
+                        <circle cx="16" cy="24" r="2" fill="currentColor"/>
+                        <circle cx="9" cy="16" r="2" fill="currentColor"/>
+                    </svg>
+                    <span>Orbitly Admin</span>
+                </a>
+                <div style="display: flex; gap: var(--spacing-md); align-items: center;">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="4" fill="currentColor"/>
+                            <path d="M10 2V4M10 16V18M18 10H16M4 10H2M15.66 4.34L14.24 5.76M5.76 14.24L4.34 15.66M15.66 15.66L14.24 14.24M5.76 5.76L4.34 4.34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" fill="currentColor"/>
+                        </svg>
+                    </button>
+                    <a href="/admin/logout" class="btn btn-secondary">Logout</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main style="padding: var(--spacing-xl) 0;">
+        <div class="container">
+            <h1 style="margin-bottom: var(--spacing-md);">Admin Dashboard</h1>
+            <p style="color: var(--text-secondary); margin-bottom: var(--spacing-xl);">Manage submissions and user data</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" id="total-contacts">0</div>
+                    <div class="stat-label">Contact Forms</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="total-trials">0</div>
+                    <div class="stat-label">Trial Signups</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="total-registrations">0</div>
+                    <div class="stat-label">Registrations</div>
+                </div>
+            </div>
+
+            <div class="admin-tabs">
+                <button class="admin-tab active" data-tab="contacts">Contact Forms</button>
+                <button class="admin-tab" data-tab="trials">Trial Signups</button>
+                <button class="admin-tab" data-tab="registrations">Registrations</button>
+            </div>
+
+            <div id="contacts-content" class="admin-content active">
+                <div style="overflow-x: auto;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Subject</th>
+                                <th>Message</th>
+                                <th>Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contacts-tbody">
+                            <tr><td colspan="7" style="text-align: center; padding: var(--spacing-xl); color: var(--text-muted);">Loading...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="trials-content" class="admin-content">
+                <div style="overflow-x: auto;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Company</th>
+                                <th>Plan</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="trials-tbody">
+                            <tr><td colspan="6" style="text-align: center; padding: var(--spacing-xl); color: var(--text-muted);">Loading...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="registrations-content" class="admin-content">
+                <div style="overflow-x: auto;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Company</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="registrations-tbody">
+                            <tr><td colspan="5" style="text-align: center; padding: var(--spacing-xl); color: var(--text-muted);">Loading...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/main.js"></script>
+    <script>
+        // Tab switching
+        const tabs = document.querySelectorAll('.admin-tab');
+        const contents = document.querySelectorAll('.admin-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active'));
+
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab + '-content').classList.add('active');
+            });
+        });
+
+        // Load data
+        async function loadContacts() {
+            try {
+                const response = await fetch('/admin/api/contacts');
+                const data = await response.json();
+
+                if (data.success) {
+                    document.getElementById('total-contacts').textContent = data.data.length;
+                    const tbody = document.getElementById('contacts-tbody');
+
+                    if (data.data.length === 0) {
+                        tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: var(--spacing-xl); color: var(--text-muted);">No contacts yet</td></tr>';
+                    } else {
+                        tbody.innerHTML = data.data.map(item => `
+                            <tr>
+                                <td>${item.id}</td>
+                                <td>${item.name}</td>
+                                <td>${item.email}</td>
+                                <td>${item.subject}</td>
+                                <td style="max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${item.message}</td>
+                                <td>${new Date(item.created_at).toLocaleString()}</td>
+                                <td><button class="delete-btn" onclick="deleteContact(${item.id})">Delete</button></td>
+                            </tr>
+                        `).join('');
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading contacts:', error);
+            }
+        }
+
+        async function loadTrials() {
+            try {
+                const response = await fetch('/admin/api/trials');
+                const data = await response.json();
+
+                if (data.success) {
+                    document.getElementById('total-trials').textContent = data.data.length;
+                    const tbody = document.getElementById('trials-tbody');
+
+                    if (data.data.length === 0) {
+                        tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: var(--spacing-xl); color: var(--text-muted);">No trial signups yet</td></tr>';
+                    } else {
+                        tbody.innerHTML = data.data.map(item => `
+                            <tr>
+                                <td>${item.id}</td>
+                                <td>${item.fullname}</td>
+                                <td>${item.email}</td>
+                                <td>${item.company || '-'}</td>
+                                <td>${item.plan}</td>
+                                <td>${new Date(item.created_at).toLocaleString()}</td>
+                            </tr>
+                        `).join('');
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading trials:', error);
+            }
+        }
+
+        async function loadRegistrations() {
+            try {
+                const response = await fetch('/admin/api/registrations');
+                const data = await response.json();
+
+                if (data.success) {
+                    document.getElementById('total-registrations').textContent = data.data.length;
+                    const tbody = document.getElementById('registrations-tbody');
+
+                    if (data.data.length === 0) {
+                        tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; padding: var(--spacing-xl); color: var(--text-muted);">No registrations yet</td></tr>';
+                    } else {
+                        tbody.innerHTML = data.data.map(item => `
+                            <tr>
+                                <td>${item.id}</td>
+                                <td>${item.fullname}</td>
+                                <td>${item.email}</td>
+                                <td>${item.company || '-'}</td>
+                                <td>${new Date(item.created_at).toLocaleString()}</td>
+                            </tr>
+                        `).join('');
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading registrations:', error);
+            }
+        }
+
+        async function deleteContact(id) {
+            if (!confirm('Are you sure you want to delete this contact?')) return;
+
+            try {
+                const response = await fetch(`/admin/api/contacts/${id}`, {
+                    method: 'DELETE'
+                });
+                const data = await response.json();
+
+                if (data.success) {
+                    loadContacts();
+                }
+            } catch (error) {
+                console.error('Error deleting contact:', error);
+            }
+        }
+
+        // Load all data on page load
+        loadContacts();
+        loadTrials();
+        loadRegistrations();
+
+        // Refresh data every 30 seconds
+        setInterval(() => {
+            loadContacts();
+            loadTrials();
+            loadRegistrations();
+        }, 30000);
+    </script>
+</body>
+</html>

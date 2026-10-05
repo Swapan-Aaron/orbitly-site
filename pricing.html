@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Orbitly pricing - Start free, upgrade when ready. Simple, transparent pricing for freelancers and teams.">
+    <title>Pricing - Orbitly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="/index" class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="16" cy="8" r="2" fill="currentColor"/>
+                        <circle cx="23" cy="16" r="2" fill="currentColor"/>
+                        <circle cx="16" cy="24" r="2" fill="currentColor"/>
+                        <circle cx="9" cy="16" r="2" fill="currentColor"/>
+                    </svg>
+                    <span>Orbitly</span>
+                </a>
+
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="nav-links">
+                    <a href="/features">Features</a>
+                    <a href="/pricing">Pricing</a>
+                    <a href="/about">About</a>
+                    <a href="/contact">Contact</a>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="4" fill="currentColor"/>
+                            <path d="M10 2V4M10 16V18M18 10H16M4 10H2M15.66 4.34L14.24 5.76M5.76 14.24L4.34 15.66M15.66 15.66L14.24 14.24M5.76 5.76L4.34 4.34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" fill="currentColor"/>
+                        </svg>
+                    </button>
+                    <a href="/auth" class="btn btn-secondary">Log In / Register</a>
+                    <a href="/trial" class="btn btn-primary">Start Free Trial</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <h1 class="page-title">Simple, transparent pricing</h1>
+                <p class="page-subtitle">Start free, upgrade when you're ready. No hidden fees.</p>
+
+                <!-- Pricing Toggle -->
+                <div class="pricing-toggle-wrapper">
+                    <span class="pricing-toggle-label">Monthly</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="pricing-toggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <span class="pricing-toggle-label">Yearly <span class="savings-badge">Save 17%</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Cards -->
+    <section class="pricing-full">
+        <div class="container">
+            <div class="pricing-cards-full">
+                <!-- Starter Plan -->
+                <div class="pricing-card-full">
+                    <h3 class="pricing-name">Starter</h3>
+                    <div class="pricing-price">
+                        <span class="price-amount">Free</span>
+                    </div>
+                    <p class="pricing-description">Perfect for trying out Orbitly</p>
+                    <a href="/auth" class="btn btn-outline btn-block">Get Started</a>
+
+                    <div class="pricing-features-full">
+                        <h4 class="features-heading">What's included:</h4>
+                        <ul class="pricing-features">
+                            <li>3 active projects</li>
+                            <li>Basic planner</li>
+                            <li>1 client portal</li>
+                            <li>5 invoices per month</li>
+                            <li>1 GB file storage</li>
+                            <li>Community support</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Solo Plan -->
+                <div class="pricing-card-full pricing-card-popular" data-plan="solo">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3 class="pricing-name">Solo</h3>
+                    <div class="pricing-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">9</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    <p class="pricing-description">For professional freelancers</p>
+                    <a href="/trial" class="btn btn-primary btn-block">Start Free Trial</a>
+
+                    <div class="pricing-features-full">
+                        <h4 class="features-heading">Everything in Starter, plus:</h4>
+                        <ul class="pricing-features">
+                            <li>Unlimited projects</li>
+                            <li>Full Smart Planner with AI suggestions</li>
+                            <li>Time tracking with reports</li>
+                            <li>Unlimited invoices</li>
+                            <li>Custom branding on client portals</li>
+                            <li>10 GB file storage</li>
+                            <li>Email support</li>
+                            <li>Integrations (Calendar, Slack, Drive)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Team Plan -->
+                <div class="pricing-card-full" data-plan="team">
+                    <h3 class="pricing-name">Team</h3>
+                    <div class="pricing-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">19</span>
+                        <span class="price-period">/user/month</span>
+                    </div>
+                    <p class="pricing-description">For small teams (2-15 people)</p>
+                    <a href="/trial" class="btn btn-outline btn-block">Start Free Trial</a>
+
+                    <div class="pricing-features-full">
+                        <h4 class="features-heading">Everything in Solo, plus:</h4>
+                        <ul class="pricing-features">
+                            <li>Shared workspaces</li>
+                            <li>Team reports and analytics</li>
+                            <li>Role-based permissions</li>
+                            <li>Team time tracking</li>
+                            <li>Priority support</li>
+                            <li>50 GB file storage per user</li>
+                            <li>Advanced integrations</li>
+                            <li>Custom workflows</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Studio Plan -->
+                <div class="pricing-card-full">
+                    <h3 class="pricing-name">Studio</h3>
+                    <div class="pricing-price">
+                        <span class="price-amount" style="font-size: 2rem;">Custom</span>
+                    </div>
+                    <p class="pricing-description">For agencies (15+ people)</p>
+                    <a href="/contact" class="btn btn-outline btn-block">Contact Sales</a>
+
+                    <div class="pricing-features-full">
+                        <h4 class="features-heading">Everything in Team, plus:</h4>
+                        <ul class="pricing-features">
+                            <li>Dedicated account manager</li>
+                            <li>Custom integrations</li>
+                            <li>Advanced security (SSO, SAML)</li>
+                            <li>SLA guarantee</li>
+                            <li>Custom contracts and invoicing</li>
+                            <li>Unlimited file storage</li>
+                            <li>Phone support</li>
+                            <li>Onboarding and training</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add-Ons Section -->
+    <section class="addons-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Add-ons</h2>
+                <p class="section-subtitle">Enhance your workspace with optional extras</p>
+            </div>
+
+            <div class="addons-grid">
+                <div class="addon-card">
+                    <div class="addon-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path d="M16 4L19 13H28L21 19L24 28L16 22L8 28L11 19L4 13H13L16 4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="addon-title">Orbitly AI Assistant</h3>
+                    <div class="addon-price">$5/month</div>
+                    <p class="addon-description">Drafts task lists from meeting notes, summarizes project progress, and writes client update emails.</p>
+                </div>
+
+                <div class="addon-card">
+                    <div class="addon-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="6" y="6" width="20" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M16 11V21M11 16H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="addon-title">Extra Storage</h3>
+                    <div class="addon-price">From $4/month</div>
+                    <p class="addon-description">Additional file storage beyond your plan limit. 50 GB for $4/month, 200 GB for $12/month.</p>
+                </div>
+
+                <div class="addon-card">
+                    <div class="addon-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="11" stroke="currentColor" stroke-width="2"/>
+                            <path d="M10 16H22M16 10V22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="addon-title">Custom Domain</h3>
+                    <div class="addon-price">$3/month</div>
+                    <p class="addon-description">Use your own web address for client portals for a fully branded experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently asked questions</h2>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3 class="faq-question">Can I cancel anytime?</h3>
+                    <p class="faq-answer">Yes! You can cancel your subscription at any time from your account settings. You'll continue to have access until the end of your billing period.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Is my data secure?</h3>
+                    <p class="faq-answer">Absolutely. All data is encrypted in transit and at rest. We never sell your data to third parties. We're SOC 2 Type II certified and GDPR compliant.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">What happens after my free trial?</h3>
+                    <p class="faq-answer">After 14 days, your trial ends. You can upgrade to a paid plan to keep your data and continue using Orbitly, or downgrade to the free Starter plan.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Can I switch plans later?</h3>
+                    <p class="faq-answer">Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate any charges or credits.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Do you offer a money-back guarantee?</h3>
+                    <p class="faq-answer">Yes. If you're not satisfied within the first 30 days of your paid subscription, contact us for a full refund. No questions asked.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">What payment methods do you accept?</h3>
+                    <p class="faq-answer">We accept all major credit cards (Visa, Mastercard, Amex, Discover) and PayPal. Studio plans can be invoiced annually.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Is there a discount for nonprofits?</h3>
+                    <p class="faq-answer">Yes! We offer a 50% discount for registered nonprofits and educational institutions. Contact us with your proof of status.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Can I try Team features before upgrading?</h3>
+                    <p class="faq-answer">Yes! Your 14-day trial includes all Team features. Invite your colleagues to try it out before committing to a paid plan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="16" cy="8" r="2" fill="currentColor"/>
+                            <circle cx="23" cy="16" r="2" fill="currentColor"/>
+                            <circle cx="16" cy="24" r="2" fill="currentColor"/>
+                            <circle cx="9" cy="16" r="2" fill="currentColor"/>
+                        </svg>
+                        <span>Orbitly</span>
+                    </div>
+                    <p class="footer-tagline">Your work, in orbit.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/vancityreynolds/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <circle cx="18" cy="6" r="1" fill="currentColor"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="/features">Features</a></li>
+                        <li><a href="/pricing">Pricing</a></li>
+                        <li><a href="#">Integrations</a></li>
+                        <li><a href="#">Templates</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Video Tutorials</a></li>
+                        <li><a href="#">System Status</a></li>
+                        <li><a href="/contact">Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:hello@orbitly.example">hello@orbitly.example</a></li>
+                        <li><a href="tel:5550193346">(555) 019-3346</a></li>
+                        <li>88 Innovation Drive, Floor 4<br>Austin, TX 78701</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Orbitly. All rights reserved. This is a fictional company for practice purposes.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
